@@ -1,6 +1,8 @@
 import { Features } from "@/components/landing/features";
 import { Hero } from "@/components/landing/hero";
 import { HowItWorks } from "@/components/landing/how-it-works";
+import { Pricing } from "@/components/landing/pricing";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 
 export default function Home() {
@@ -8,7 +10,15 @@ export default function Home() {
     <main className="min-h-screen bg-white dark:bg-black">
       <Hero />
       <Features />
-      <HowItWorks/>
+      <HowItWorks />
+      
+       <SignedIn>
+        <div className="fixed top-4 right-4">
+          <UserButton />
+        </div>
+      </SignedIn>
+
+      <Pricing />
     </main>
   );
 }
