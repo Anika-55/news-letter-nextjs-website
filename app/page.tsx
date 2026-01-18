@@ -1,10 +1,15 @@
+import { Features } from "@/components/landing/features";
+import { Hero } from "@/components/landing/hero";
+import { HowItWorks } from "@/components/landing/how-it-works";
 
 
 export default function Home() {
   return (
-    <div>
-      <h1>hello</h1>
-   </div>
+    <main className="min-h-screen bg-white dark:bg-black">
+      <Hero />
+      <Features />
+      <HowItWorks/>
+    </main>
   );
 }
 
