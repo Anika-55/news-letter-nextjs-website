@@ -9,6 +9,7 @@ import {
   buildNewsletterPrompt,
 } from "@/lib/newsletter/prompt-builder";
 import { prepareFeedsAndArticles } from "@/lib/rss/feed-refresh";
+import { NewsletterSchema } from "@/actions/generate-newsletter";
 
 export const maxDuration = 300; // 5 minutes
 
@@ -24,7 +25,7 @@ const newsletterSchema = z.object({
   additionalInfo: z.string(), // required for AI SDK
 });
 
-export type GeneratedNewsletter = z.infer<typeof newsletterSchema>;
+export type GeneratedNewsletter = z.infer<typeof NewsletterSchema>;
 
 export async function POST(req: NextRequest) {
   try {
