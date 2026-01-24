@@ -10,6 +10,7 @@ generator client {
 
 datasource db {
   provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 /// User model stores minimal information, relies on Clerk for authentication
@@ -78,7 +79,7 @@ model RssArticle {
   feedId        String   @db.ObjectId
   feed          RssFeed  @relation(fields: [feedId], references: [id], onDelete: NoAction)
   guid          String   @unique // RSS unique identifier for deduplication across all users
-  sourceFeedIds String[] @db.ObjectId // All feed records that reference this article
+  sourceFeedIds String[] // All feed records that reference this article
   title         String
   link          String
   content       String? // Full article content
@@ -109,7 +110,7 @@ model Newsletter {
   startDate             DateTime // Newsletter time frame start
   endDate               DateTime // Newsletter time frame end
   userInput             String? // User's context or additional input
-  feedsUsed             String[] @db.ObjectId // Array of RSS feed IDs used for generation
+  feedsUsed             String[] // Array of RSS feed IDs used for generation
   createdAt             DateTime @default(now())
   updatedAt             DateTime @updatedAt
 
