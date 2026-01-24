@@ -35,33 +35,33 @@ Built with Next.js App Router for fast performance and clean architecture
 
 🛠️ Tech Stack
 
-Frontend
+**Frontend
 
-Next.js 14+ (App Router)
-
-React
+Next.js 16 (App Router)
 
 Tailwind CSS
 
-Backend
+shadcn ui
+
+**Backend
 
 Next.js Server Actions / API Routes
 
 Prisma ORM
 
-Database
+**Database
 
 MongoDB
 
-Authentication
+**Authentication
 
 Clerk
 
-AI Integration
+**AI Integration
 
 OpenAI API (for generating newsletters)
 
-Validation
+**Validation
 
 Zod
 
